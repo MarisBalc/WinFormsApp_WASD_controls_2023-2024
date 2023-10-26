@@ -52,7 +52,6 @@
             food.Size = new Size(50, 50);
             food.TabIndex = 1;
             food.TabStop = false;
-            food.Click += food_Click;
             // 
             // Form1
             // 

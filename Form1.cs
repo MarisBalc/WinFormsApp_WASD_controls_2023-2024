@@ -35,27 +35,7 @@ namespace WinFormsApp_WASD_controls_2023_2024
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.A)
-            {
-                hero.Left -= 10;
-
-            }
-            else if (e.KeyCode == Keys.D)
-            {
-                hero.Left += 10;
-
-            }
-            else if (e.KeyCode == Keys.W)
-            {
-
-                hero.Top -= 10;
-
-            }
-            else if (e.KeyCode == Keys.S)
-            {
-                hero.Top += 10;
-            }
-
+            MoveTheHero(e.KeyCode);
             CollisionCheck();
 
         }
@@ -68,9 +48,30 @@ namespace WinFormsApp_WASD_controls_2023_2024
             }
         }
 
-
-        private void food_Click(object sender, EventArgs e)
+        private void MoveTheHero(Keys keyCode)
         {
+            if (keyCode == Keys.A)
+            {
+                hero.Left -= 10;
+
+            }
+            else if (keyCode == Keys.D)
+            {
+                hero.Left += 10;
+
+            }
+            else if (keyCode == Keys.W)
+            {
+
+                hero.Top -= 10;
+
+            }
+            else if (keyCode == Keys.S)
+            {
+                hero.Top += 10;
+
+            }
+
 
         }
     }
