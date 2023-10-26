@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+
 namespace WinFormsApp_WASD_controls_2023_2024
 {
     public partial class Form1 : Form
@@ -37,17 +39,39 @@ namespace WinFormsApp_WASD_controls_2023_2024
             {
                 hero.Left -= 10;
 
-            } else if (e.KeyCode == Keys.D)
+            }
+            else if (e.KeyCode == Keys.D)
             {
                 hero.Left += 10;
 
-            } else if (e.KeyCode == Keys.W) {
-            
+            }
+            else if (e.KeyCode == Keys.W)
+            {
+
                 hero.Top -= 10;
 
-            } else if (e.KeyCode == Keys.S) {
+            }
+            else if (e.KeyCode == Keys.S)
+            {
                 hero.Top += 10;
             }
+
+            CollisionCheck();
+
+        }
+
+        private void CollisionCheck()
+        {
+            if (hero.Bounds.IntersectsWith(food.Bounds))
+            {
+                food.Visible = false;
+            }
+        }
+
+
+        private void food_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
